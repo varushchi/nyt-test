@@ -16,10 +16,6 @@ function formatDate(isoString: string) {
   .replace(/(\d+):(\d+)/, '$1.$2')
 }
 
-// Usage:
-const isoDate = "2023-02-26T16:32:00Z";
-console.log(formatDate(isoDate)); // "Feb 26 2023, 4.32 PM"
-
 export default function ArticleCard({article}: {article: Article}) {
   return (
     <a className='flex gap-[20px] py-[20px] text-inherit' href={article.web_url} target='_blank'>

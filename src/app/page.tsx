@@ -48,7 +48,6 @@ export default function Home() {
       setLoading(true)
       try {
         const res = await axios.get<Response>(`/api?year=${year}&month=${month}`)
-        console.log(res)
         if (res.status === 200) {
           const serverArticles = res.data.Body.response.docs
           const filterMonth = parseInt(dateState.month) > 9 ? dateState.month : `0${dateState.month}`
@@ -57,7 +56,6 @@ export default function Home() {
           const filterArticles = serverArticles.filter(article => (
             article.pub_date.includes(dateFilter)
           )).slice(0, 5)
-          console.log(filterArticles)
           if (filterArticles.length === 0){
             // setToPreviousDay()
           } else {
@@ -104,7 +102,6 @@ export default function Home() {
   } else {
     return (
       <div className="w-[80%] max-w-[400px] min-w-[450px] mx-auto relative min-h-screen">
-        {/* Close button (top-left) */}
         <div className="absolute right-15 top-12">
           <button className='cursor-pointer border-0' onClick={() => setShowNavs(false)}>
             <Image
@@ -115,8 +112,6 @@ export default function Home() {
             />
           </button>
         </div>
-
-        {/* Centered content */}
         <div className="flex flex-col justify-center h-screen gap-[20px] text-[24px] font-[700] tracking-[0.1em] mt-[-20px]">
           <h1>SCIENCE</h1>
           <h1>GENERAL</h1>
