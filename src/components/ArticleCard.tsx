@@ -24,6 +24,8 @@ export default function ArticleCard({article}: {article: Article}) {
         alt='news img'
         height={74}
         width={99}
+        layout="responsive"
+        objectFit="cover"
         className='pt-[30px]'
       />
       <div className='flex flex-col gap-[10px]'>
